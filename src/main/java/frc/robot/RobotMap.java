@@ -22,6 +22,7 @@ public class RobotMap {
   //CAN IDs
   public final static int leftDrive = 1;
   public final static int rightDrive = 2;
+  public final static int flinger = 3;
 
   public static void setUpDefaultMappings() {
     XboxController primary = OI.getPrimaryController();
