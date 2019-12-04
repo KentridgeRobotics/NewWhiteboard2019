@@ -7,6 +7,8 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -15,7 +17,21 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class TiltSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  private static TiltSubsystem instance;
 
+  private WPI_TalonSRX tilter;
+
+  public static TiltSubsystem getInstance() {
+    if (instance == null) {
+      instance = new TiltSubsystem();
+    }
+    return instance;
+  }
+
+  public TiltSubsystem() {
+
+  }
+  
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.

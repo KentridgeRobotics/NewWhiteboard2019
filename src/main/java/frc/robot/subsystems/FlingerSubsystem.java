@@ -32,6 +32,8 @@ public class FlingerSubsystem extends Subsystem {
     flinger = new WPI_TalonSRX(RobotMap.flinger);
   }
 
+
+
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
