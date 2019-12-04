@@ -16,12 +16,20 @@ import frc.robot.utils.XboxController;
 public class OI {
 
   private static XboxController primaryController = null;
+  private static XboxController secondaryController = null;
 
   public static XboxController getPrimaryController() {
     if(primaryController == null) {
       primaryController = new XboxController(RobotMap.primaryController);
     }
     return primaryController;
+  }
+
+  public static XboxController getSecondaryController() {
+    if(secondaryController == null) {
+      secondaryController = new XboxController(RobotMap.secondaryController);
+    }
+    return secondaryController;
   }
 
   public static double getRobotTurn() { //arcade drive

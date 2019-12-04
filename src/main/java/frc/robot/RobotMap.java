@@ -8,6 +8,7 @@
 package frc.robot;
 
 import frc.robot.commands.drive.ChangeDriveMode;
+import frc.robot.commands.diskLoader.loadDiskCommand;
 import frc.robot.utils.XboxController;
 
 /**
@@ -19,6 +20,7 @@ import frc.robot.utils.XboxController;
 public class RobotMap {
   //Controller IDs
   public final static int primaryController = 0;
+  public final static int secondaryController = 1;
   //CAN IDs
   public final static int leftDrive = 1;
   public final static int rightDrive = 2;
@@ -29,6 +31,9 @@ public class RobotMap {
   public static void setUpDefaultMappings() {
     XboxController primary = OI.getPrimaryController();
     primary.buttonMenu.whenPressed(new ChangeDriveMode());
+
+    XboxController secondary = OI.getSecondaryController();
+    secondary.buttonX.whileHeld(new loadDiskCommand());
   }
 
   // If you are using multiple modules, make sure to define both the port
