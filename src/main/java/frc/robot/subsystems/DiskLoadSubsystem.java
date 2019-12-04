@@ -33,6 +33,9 @@ public class DiskLoadSubsystem extends Subsystem {
     
     loader = new WPI_TalonSRX(RobotMap.loader);
   }
+  public void setLoaderSpeed (double speed){
+    loader.set(speed);
+  }
 
   @Override
   public void initDefaultCommand() {
