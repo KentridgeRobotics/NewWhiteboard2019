@@ -23,6 +23,8 @@ public class RobotMap {
   public final static int leftDrive = 1;
   public final static int rightDrive = 2;
   public final static int flinger = 3;
+  public final static int tilter = 4;
+  public final static int loader = 5;
 
   public static void setUpDefaultMappings() {
     XboxController primary = OI.getPrimaryController();
