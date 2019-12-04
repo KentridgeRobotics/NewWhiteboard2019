@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
@@ -30,6 +31,7 @@ public class DiskLoadSubsystem extends Subsystem {
 
   public DiskLoadSubsystem() {
     
+    loader = new WPI_TalonSRX(RobotMap.loader);
   }
 
   @Override
