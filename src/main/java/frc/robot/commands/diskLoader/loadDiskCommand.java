@@ -8,16 +8,18 @@
 package frc.robot.commands.diskLoader;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.subsystems.DiskLoadSubsystem;
 
 public class loadDiskCommand extends Command {
   public loadDiskCommand() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(DiskLoadSubsystem.getInstance());
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    DiskLoadSubsystem.getInstance().setLoaderSpeed(0.25);
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -34,6 +36,7 @@ public class loadDiskCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    DiskLoadSubsystem.getInstance().setLoaderSpeed(0);
   }
 
   // Called when another command which requires one or more of the same
