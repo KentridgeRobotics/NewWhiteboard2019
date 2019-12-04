@@ -33,6 +33,10 @@ public class TiltSubsystem extends Subsystem {
 
     tilter = new WPI_TalonSRX(RobotMap.tilter);
   }
+
+  public void setTiltSpeed (double speed) {
+    tilter.set(speed);
+  }
   
   @Override
   public void initDefaultCommand() {
