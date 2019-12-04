@@ -8,16 +8,18 @@
 package frc.robot.commands.tilt;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.subsystems.TiltSubsystem;
 
 public class tiltUpCommand extends Command {
   public tiltUpCommand() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(TiltSubsystem.getInstance());
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    TiltSubsystem.getInstance().setTiltSpeed(0.25);
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -34,6 +36,7 @@ public class tiltUpCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    TiltSubsystem.getInstance().setTiltSpeed(0);
   }
 
   // Called when another command which requires one or more of the same

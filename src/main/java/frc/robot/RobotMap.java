@@ -7,8 +7,10 @@
 
 package frc.robot;
 
-import frc.robot.commands.drive.ChangeDriveMode;
 import frc.robot.commands.diskLoader.loadDiskCommand;
+import frc.robot.commands.drive.ChangeDriveMode;
+import frc.robot.commands.tilt.tiltDownCommand;
+import frc.robot.commands.tilt.tiltUpCommand;
 import frc.robot.utils.XboxController;
 
 /**
@@ -34,6 +36,8 @@ public class RobotMap {
 
     XboxController secondary = OI.getSecondaryController();
     secondary.buttonX.whileHeld(new loadDiskCommand());
+    secondary.buttonY.whileHeld(new tiltUpCommand());
+    secondary.buttonA.whileHeld(new tiltDownCommand());
   }
 
   // If you are using multiple modules, make sure to define both the port
